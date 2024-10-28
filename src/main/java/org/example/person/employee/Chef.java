@@ -1,5 +1,5 @@
 package org.example.person.employee;
 
-public class Waiter {
+public class Chef {
     
 }

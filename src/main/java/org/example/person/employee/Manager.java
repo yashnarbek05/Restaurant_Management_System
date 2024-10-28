@@ -2,7 +2,6 @@ package org.example.person.employee;
 
 import java.time.LocalDate;
 
-public class Customer {
-    private LocalDate localDate;
-    
+public class Manager {
+
 }

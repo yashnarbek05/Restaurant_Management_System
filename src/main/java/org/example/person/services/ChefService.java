@@ -1,5 +1,7 @@
 package org.example.person.services;
 
-public interface ChefServiceImp{
-    boolean takeOrder();
+public class ChefService implements ChefServiceImp{
+    public boolean takeOrder() {
+        return false;
+    }
 }

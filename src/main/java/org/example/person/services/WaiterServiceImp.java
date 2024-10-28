@@ -1,5 +1,5 @@
 package org.example.person.services;
 
-public interface ReceptionistServiceImp {
-    boolean createReservation();
+public interface WaiterServiceImp {
+    boolean createOrder();
 }

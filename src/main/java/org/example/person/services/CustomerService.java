@@ -1,4 +1,5 @@
 package org.example.person.services;
 
-public class CustomerService {
+public class CustomerService implements CustomerServiceImp{
+
 }

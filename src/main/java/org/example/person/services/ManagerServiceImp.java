@@ -1,5 +1,5 @@
 package org.example.person.services;
 
-public interface CustomerServiceImp {
-    
+public interface ManagerServiceImp {
+    boolean addEmployee();
 }

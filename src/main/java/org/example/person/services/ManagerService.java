@@ -1,5 +1,9 @@
 package org.example.person.services;
 
-public class CustomerService implements CustomerServiceImp{
+public class ManagerService implements ManagerServiceImp{
 
+    @Override
+    public boolean addEmployee() {
+        return false;
+    }
 }
