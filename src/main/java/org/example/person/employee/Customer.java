@@ -2,7 +2,7 @@ package org.example.person.employee;
 
 import java.time.LocalDate;
 
-public class Customer {
+public class Customer extends Employee{
     private LocalDate localDate;
 
 }
