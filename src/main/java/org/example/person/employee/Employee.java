@@ -6,8 +6,9 @@ public class Employee extends Person{
     protected int employeeID;
     protected Date dateJoined;
 
-    Employee(){
-
+    public Employee(int employeeID, Date dateJoined) {
+        this.employeeID = employeeID;
+        this.dateJoined = dateJoined;
     }
 
     public void setEmployeeID(int employeeID) {
