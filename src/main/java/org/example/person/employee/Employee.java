@@ -1,29 +1,21 @@
 package org.example.person.employee;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Employee extends Person{
-    protected int employeeID;
-    protected Date dateJoined;
+    private LocalDate lastVisited;
 
-//    public Employee(int employeeID, Date dateJoined) {
-//        this.employeeID = employeeID;
-//        this.dateJoined = dateJoined;
-//    }
-
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
+    public Employee(String name, String email, String phone, LocalDate lastVisited) {
+        super(name, email, phone);
+        this.lastVisited = lastVisited;
     }
 
-    public void setDateJoined(Date dateJoined) {
-        this.dateJoined = dateJoined;
+    public LocalDate getLastVisited() {
+        return lastVisited;
     }
 
-    public int getEmployeeID() {
-        return employeeID;
-    }
-
-    public Date getDateJoined() {
-        return dateJoined;
+    public void setLastVisited(LocalDate lastVisited) {
+        this.lastVisited = lastVisited;
     }
 }

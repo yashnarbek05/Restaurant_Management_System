@@ -1,25 +1,30 @@
 package org.example.restaurant.order.objects;
 
+import org.example.enums.PeopleType;
 import org.example.enums.ReservationStatus;
-import org.example.enums.TableStatus;
 import org.example.person.employee.Customer;
 
 import java.time.LocalDateTime;
+import java.util.Map;
+
+import static org.example.utils.Input.random;
 
 public class Reservation {
-    private int Id;
+    private final int Id = random.nextInt();
     private LocalDateTime timeOfReservation;
-    private int peopleCount;
+    private Map<PeopleType, Integer> peopleTypeAndCount;
     private ReservationStatus status;
-    private String notes;
     private Customer customer;
+
+    public Reservation(LocalDateTime timeOfReservation, Map<PeopleType, Integer> peopleTypeAndCount,  ReservationStatus status, String notes, Customer customer) {
+        this.timeOfReservation = timeOfReservation;
+        this.peopleTypeAndCount = peopleTypeAndCount;
+        this.status = status;
+        this.customer = customer;
+    }
 
     public int getId() {
         return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
     }
 
     public LocalDateTime getTimeOfReservation() {
@@ -30,14 +35,6 @@ public class Reservation {
         this.timeOfReservation = timeOfReservation;
     }
 
-    public int getPeopleCount() {
-        return peopleCount;
-    }
-
-    public void setPeopleCount(int peopleCount) {
-        this.peopleCount = peopleCount;
-    }
-
     public ReservationStatus getStatus() {
         return status;
     }
@@ -46,19 +43,22 @@ public class Reservation {
         this.status = status;
     }
 
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
     public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "Id=" + Id +
+                ", timeOfReservation=" + timeOfReservation +
+                ", peopleTypeAndCount=" + peopleTypeAndCount +
+                ", status=" + status +
+                ", customer=" + customer +
+                '}';
     }
 }

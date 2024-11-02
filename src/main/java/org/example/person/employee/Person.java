@@ -1,14 +1,22 @@
 package org.example.person.employee;
 
+import static org.example.utils.Input.random;
+
 public class Person {
+    protected final int Id = random.nextInt();
     protected String name;
     protected String email;
     protected String phone;
 
-    Person(){
+    public Person(String name, String email, String phone) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
 
-    };
-
+    public int getId() {
+        return Id;
+    }
     public void setName(String name) {
         this.name = name;
     }
