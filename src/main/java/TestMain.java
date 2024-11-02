@@ -10,8 +10,9 @@ public class TestMain {
         //Checking if that file already exists or not
         checkFile(data);
 
-
+        //For logging in and out
     }
+
     //To check if the file already exists, if not creating
     public static void checkFile(File data){
         try {
@@ -24,5 +25,10 @@ public class TestMain {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+    }
+
+    //Logging in and logging out
+    public static void logInOut(){
+
     }
 }
