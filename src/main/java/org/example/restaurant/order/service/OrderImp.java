@@ -1,9 +1,9 @@
 package org.example.restaurant.order.service;
 
-import org.example.enums.OrderStatus;
+import org.example.restaurant.menu.objects.Meal;
+import org.example.restaurant.order.objects.Order;
 
 public interface OrderImp {
-    boolean addMeal();
-    boolean removeMeal();
-    OrderStatus setStatus();
+    void addMeal(Order order, Meal meal, Integer quantity);
+    boolean removeMeal(Order order);
 }

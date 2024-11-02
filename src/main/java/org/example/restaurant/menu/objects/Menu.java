@@ -1,9 +1,20 @@
 package org.example.restaurant.menu.objects;
 
+import java.util.List;
+
 public class Menu {
     private int menuID;
     private String title;
     private String description;
+    private List<MenuSection> menuSections;
+
+    public List<MenuSection> getMenuSections() {
+        return menuSections;
+    }
+
+    public void setMenuSections(List<MenuSection> menuSections) {
+        this.menuSections = menuSections;
+    }
 
     public void setMenuID(int menuID) {
         this.menuID = menuID;
@@ -29,5 +40,14 @@ public class Menu {
         return description;
     }
 
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "menuID=" + menuID +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
 

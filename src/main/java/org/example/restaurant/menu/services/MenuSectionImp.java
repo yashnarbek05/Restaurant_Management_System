@@ -1,5 +1,5 @@
 package org.example.restaurant.menu.services;
 
 public interface MenuSectionImp {
-    boolean addMenuItem();
+    boolean addMeal(MenuSection menuSection);
 }
