@@ -1,17 +1,19 @@
 package org.example.person.services;
 
+import org.example.db.database;
 import org.example.enums.OrderStatus;
 import org.example.restaurant.menu.objects.Meal;
 import org.example.restaurant.menu.objects.Menu;
 import org.example.restaurant.menu.objects.MenuSection;
 import org.example.restaurant.order.objects.Order;
+import org.example.restaurant.order.objects.Table;
 import org.example.restaurant.order.service.OrderService;
 
 import static org.example.utils.Input.scannerInt;
 import static org.example.utils.Input.scannerString;
 
 public class WaiterService implements WaiterServiceImp {
-    public Order createOrder(Menu menu){
+    public void createOrder(Menu menu, Table table){
 
         OrderService orderService = new OrderService();
 
@@ -47,7 +49,9 @@ public class WaiterService implements WaiterServiceImp {
 
             System.out.println("Is that enough? (yes/no)");
 
-            if (scannerString.nextLine().equals("yes")) return order;
+            if (scannerString.nextLine().equals("yes")) {
+                database.TABLE_WITH_ORDER.put(table, order);
+            }
 
         }
     }

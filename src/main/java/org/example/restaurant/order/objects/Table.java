@@ -2,11 +2,15 @@ package org.example.restaurant.order.objects;
 
 import org.example.enums.TableStatus;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Table {
     private int Id;
     private TableStatus tableStatus;
     private int maxCapacity;
     private int localId;
+    private List<Reservation> reservations = new ArrayList<>();
 
     public int getId() {
         return Id;
