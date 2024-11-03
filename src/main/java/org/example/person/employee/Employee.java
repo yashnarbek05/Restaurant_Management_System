@@ -1,9 +1,11 @@
 package org.example.person.employee;
 
+import org.example.enums.LogStatus;
+
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Employee extends Person{
+public class Employee extends Person {
     private LocalDate lastVisited;
 
     public Employee(String name, String email, String phone, LocalDate lastVisited) {
