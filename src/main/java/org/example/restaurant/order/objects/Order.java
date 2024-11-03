@@ -4,7 +4,6 @@ import org.example.enums.OrderStatus;
 import org.example.restaurant.menu.objects.Meal;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static org.example.utils.Input.random;
@@ -15,6 +14,7 @@ public class Order {
     private Map<Meal, Integer> mealsWithQuantity;
 
     public Order(OrderStatus status) {
+
         this.status = status;
         this.mealsWithQuantity = new HashMap<>();
     }

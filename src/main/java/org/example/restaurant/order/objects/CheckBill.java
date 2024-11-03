@@ -1,15 +1,15 @@
 package org.example.restaurant.order.objects;
 
+import org.example.person.employee.Customer;
+import org.example.utils.Input;
+
 public class CheckBill {
-    private int checkID;
+    private final int Id = Input.random.nextInt();
     private double amount;
     private double tip;
     private double tax;
     private boolean isPaid;
 
-    public void setCheckID(int checkID) {
-        this.checkID = checkID;
-    }
 
     public void setAmount(double amount) {
         this.amount = amount;
@@ -27,8 +27,8 @@ public class CheckBill {
         isPaid = paid;
     }
 
-    public int getCheckID() {
-        return checkID;
+    public int getId() {
+        return Id;
     }
 
     public double getAmount() {
