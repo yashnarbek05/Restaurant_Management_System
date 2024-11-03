@@ -5,5 +5,5 @@ import org.example.restaurant.order.objects.Order;
 
 public interface OrderImp {
     void addMeal(Order order, Meal meal, Integer quantity);
-    boolean removeMeal(Order order);
+    void removeMeal(Order order, Meal meal);
 }

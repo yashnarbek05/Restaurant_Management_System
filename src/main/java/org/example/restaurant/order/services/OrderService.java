@@ -15,8 +15,9 @@ public class OrderService implements OrderImp{
     }
 
     @Override
-    public boolean removeMeal(Order order) {
-        return false;
+    public void removeMeal(Order order, Meal meal) {
+        order.getMealsWithQuantity().remove(meal);
+        System.out.println(meal + "removed!");
     }
 
 
