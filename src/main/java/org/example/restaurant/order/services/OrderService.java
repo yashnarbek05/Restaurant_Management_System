@@ -1,4 +1,4 @@
-package org.example.restaurant.order.service;
+package org.example.restaurant.order.services;
 
 import org.example.restaurant.menu.objects.Meal;
 import org.example.restaurant.order.objects.Order;
@@ -15,8 +15,9 @@ public class OrderService implements OrderImp{
     }
 
     @Override
-    public boolean removeMeal(Order order) {
-        return false;
+    public void removeMeal(Order order, Meal meal) {
+        order.getMealsWithQuantity().remove(meal);
+        System.out.println(meal + "removed!");
     }
 
 

@@ -1,23 +1,9 @@
 package org.example;
 
-import org.example.db.database;
-import org.example.enums.PeopleType;
-import org.example.person.employee.Chef;
 import org.example.person.employee.Customer;
-import org.example.person.employee.Person;
 import org.example.person.services.CustomerService;
-import org.example.person.services.WaiterService;
-import org.example.restaurant.menu.objects.Meal;
-import org.example.restaurant.menu.objects.Menu;
-import org.example.restaurant.menu.objects.MenuSection;
-import org.example.restaurant.order.objects.Order;
-import org.example.restaurant.order.objects.Reservation;
-import org.example.restaurant.order.service.OrderService;
-import org.example.utils.Input;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

@@ -43,4 +43,12 @@ public class Table {
     public void setLocalId(int localId) {
         this.localId = localId;
     }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 }
