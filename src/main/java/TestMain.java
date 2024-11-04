@@ -1,28 +1,39 @@
+import org.example.Main;
+import org.example.person.services.LoginService;
+import org.example.person.services.ManagerService;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 
 public class TestMain {
     public static void main(String[] args){
-        //Creating a file called data
-        File data = new File("Database.txt");
+        //position of the user. Exmpl: waiter,, manager , etc
+        String position;
 
-        //Checking if that file already exists or not
-        checkFile(data);
+        //user log in
+        position = LoginService.login().getClass().getSimpleName();
 
-
-    }
-    //To check if the file already exists, if not creating
-    public static void checkFile(File data){
-        try {
-            if (data.createNewFile()) {
-                System.out.println("Database created: " + data.getName());
-            } else {
-                System.out.println("Database already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+        //user switch between tasks
+        switch(position){
+            case "Manager":
+                System.out.println("Manager");
+                break;
+            case "Chef":
+                System.out.println("Chef");
+                break;
+            case "Customer":
+                System.out.println("Customer");
+                break;
+            case "Receptionist":
+                System.out.println("Receptionist");
+                break;
+            case "Waiter":
+                System.out.println("Waiter");
+                break;
+            default:
+                System.out.println("Wrong account");
+                break;
         }
     }
 }
