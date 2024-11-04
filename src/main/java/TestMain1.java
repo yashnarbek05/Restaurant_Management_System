@@ -11,4 +11,19 @@ public class TestMain1 {
         //Create object of all classes
 
     }
+
+    //Create object of all employee classes
+    public static void defaultStart(){
+
+    }
+
+    //User input
+    public static void userInputForLogIn(){
+
+    }
+
+    //search for name and if exists log in, if not, print "account not exists"
+    public static void searchForUser(){
+
+    }
 }
