@@ -1,4 +1,4 @@
-package org.example.restaurant.order.service;
+package org.example.restaurant.order.services;
 
 public class TableService implements TableImp {
     @Override

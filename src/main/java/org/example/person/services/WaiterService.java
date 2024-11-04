@@ -7,7 +7,7 @@ import org.example.restaurant.menu.objects.Menu;
 import org.example.restaurant.menu.objects.MenuSection;
 import org.example.restaurant.order.objects.Order;
 import org.example.restaurant.order.objects.Table;
-import org.example.restaurant.order.service.OrderService;
+import org.example.restaurant.order.services.OrderService;
 
 import static org.example.utils.Input.scannerInt;
 import static org.example.utils.Input.scannerString;
