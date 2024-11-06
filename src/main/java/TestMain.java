@@ -12,6 +12,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Scanner;
 
+import static java.awt.SystemColor.menu;
+
 public class TestMain {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
@@ -73,17 +75,7 @@ public class TestMain {
                 System.out.println("1.Create order\n2.Choose section\n3.Choose meal");
                 WaiterService waiterService = new WaiterService();
                 int i = scanner.nextInt();
-                switch (i){
-                    case 1:
-                        //waiterService.createOrder();
-                        break;
-                    case 2:
-                        //waiterService.chooseSection();
-                        break;
-                    case 3:
-                        //waiterService.chooseMeal();
-                        break;
-                }
+                //waiterService.createOrder();
                 break;
 
             //if non of the above
