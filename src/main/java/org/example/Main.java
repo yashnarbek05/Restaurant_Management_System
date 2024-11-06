@@ -14,6 +14,7 @@ public class Main {
 
         Person person;
         String position;
+        int logout;
 
         //loop
         while (true) {
@@ -77,7 +78,8 @@ public class Main {
                     }
 
                     System.out.println("Enter 0 if you want to log out, and anything else to continue : ");
-                    if (Input.scannerInt.nextInt() == 0) {
+                    logout = Input.scannerInt.nextInt();
+                    if (logout == 0) {
                         position = "logOut";
                     }
                 }
