@@ -1,15 +1,11 @@
-import org.example.db.database;
-import org.example.person.employee.*;
+import org.example.person.employee.Customer;
+import org.example.person.employee.Person;
 import org.example.person.services.*;
 import org.example.utils.Input;
-
-import java.time.LocalDate;
-import java.util.Scanner;
 
 public class TestMain {
     public static void main(String[] args) {
         //position of the user. Exmpl: waiter,, manager , etc
-
         Person per = LoginService.login();
 
         //user log in
@@ -61,5 +57,6 @@ public class TestMain {
                 System.out.println("Wrong account");
                 break;
         }
+
     }
 }
