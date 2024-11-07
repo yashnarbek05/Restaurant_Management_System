@@ -1,6 +1,7 @@
 package org.example.person.services;
 
 import org.example.db.database;
+import org.example.enums.ReservationStatus;
 import org.example.restaurant.order.objects.Reservation;
 import org.example.restaurant.order.objects.Table;
 import org.example.utils.Input;
@@ -25,7 +26,7 @@ public class ReceptionistService implements ReceptionistServiceImp {
             else break;
         }
 
-
+        System.out.println("table choose");
         boolean isfull = false;
         for (Table table : database.TABLES) {
 
@@ -38,6 +39,8 @@ public class ReceptionistService implements ReceptionistServiceImp {
 
             if(!isfull){
                 table.getReservations().add(chosenReservation);
+                chosenReservation.setStatus(ReservationStatus.CONFIRMED);
+                System.out.println("done!!");
                 database.RESERVATIONS.remove(chosenReservation);
                 return true;
             }

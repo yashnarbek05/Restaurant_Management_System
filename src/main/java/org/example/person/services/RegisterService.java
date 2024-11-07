@@ -1,9 +1,11 @@
 package org.example.person.services;
 
 import org.example.db.database;
+import org.example.person.employee.Customer;
 import org.example.person.employee.Person;
 import org.example.utils.Input;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.example.db.database.USERS;
@@ -44,14 +46,8 @@ public class RegisterService {
                 return false;
             }
 
-            if (isNameExist(name)) {
-                System.out.println("Name already exists. Do you want to log in?");
-                LoginService.login();
-                return false;
-            }
-
-            Person newUser = new Person(name, email, phone);
-            USERS.add(newUser);
+            Customer customer = new Customer(name, email, phone, LocalDate.now());
+            USERS.add(customer);
             System.out.println("User registered successfully!");
             return true;
         }
@@ -75,14 +71,6 @@ public class RegisterService {
         return false;
     }
 
-    private static boolean isNameExist(String name) {
-        for (Person user : USERS) {
-            if (user.getName().equals(name)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     private static boolean isValidEmail(String email) {
         if (email == null || !email.endsWith("@gmail.com")) {

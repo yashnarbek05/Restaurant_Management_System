@@ -12,6 +12,12 @@ public class Table {
     private int localId;
     private List<Reservation> reservations = new ArrayList<>();
 
+    public Table(TableStatus tableStatus, int maxCapacity, int localId) {
+        this.tableStatus = tableStatus;
+        this.maxCapacity = maxCapacity;
+        this.localId = localId;
+    }
+
     public int getId() {
         return Id;
     }
