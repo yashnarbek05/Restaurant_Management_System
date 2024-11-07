@@ -1,61 +1,91 @@
 package org.example;
 
-import org.example.db.database;
 import org.example.db.databaseService;
-import org.example.enums.PeopleType;
-import org.example.enums.ReservationStatus;
-import org.example.enums.TableStatus;
 import org.example.person.employee.Customer;
-import org.example.person.employee.Receptionist;
-import org.example.person.services.ReceptionistService;
-import org.example.restaurant.menu.objects.Meal;
-import org.example.restaurant.order.objects.CheckBill;
-import org.example.restaurant.order.objects.Reservation;
-import org.example.restaurant.order.objects.Table;
-
-import java.io.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import org.example.person.employee.Person;
+import org.example.person.services.*;
+import org.example.utils.Input;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        databaseService da = new databaseService();
+    static {
+        databaseService.load();
+    }
+    public static void main(String[] args) {
+
+        Person person;
+        String position;
+
+        //loop
+        while (true) {
+            //user log in or register
+            System.out.print("Type 1 to log in , 2 to register and 0 to exit program: ");
+            int option = Input.scannerInt.nextInt();
+            if (option == 2) {
+                RegisterService.register();
+            } else if (option == 1) {
+                person = LoginService.login();
+                position = person.getClass().getSimpleName();
+
+                while (true) {
+                    //user switch between tasks
+                    switch (position) {
+                        //Managers methods
+                        case "Manager":
+                            System.out.println("MANAGER");
+//                        System.out.println("Choose which task you want to do : ");
+                            System.out.println("add user : ");
+                            RegisterService.register();
+                            break;
+
+                        //Chefs methods
+                        case "Chef":
+                            System.out.println("Chef");
+                            ChefService chefService = new ChefService();
+                            chefService.takeOrder();
+                            break;
+
+                        //Customers methods
+                        case "Customer":
+                            System.out.println("Customer");
+                            CustomerService customer = new CustomerService();
+                            customer.createReservation((Customer) person);
+                            break;
+
+                        //Receptionists methods
+                        case "Receptionist":
+                            System.out.println("Receptionist");
+                            ReceptionistService receptionistService = new ReceptionistService();
+                            receptionistService.createTableWithReservation();
+                            break;
+
+                        //Waiters methods
+                        case "Waiter":
+                            System.out.println("Waiter");
+                            WaiterService waiterService = new WaiterService();
+                            waiterService.createOrder();
+                            break;
+
+                        //logging out
+                        case "logOut":
+                            System.out.println("Login out...");
+                            return;
+
+                        //if non of the above
+                        default:
+                            System.out.println("Wrong account");
+                            break;
+                    }
+
+                    System.out.println("Enter 0 if you want to log out, and anything else to continue : ");
+                    if (Input.scannerInt.nextInt() == 0) {
+                        position = "logOut";
+                    }
+                }
+            } else if (option == 0) {
+                return;
+            } else {
+                System.out.println("Wrong input, please try again!");
+            }
+        }
     }
 }
-
-//    public void WriteObjectToFile(List<Object> list, String name) throws IOException {
-//        FileOutputStream fileOut = new FileOutputStream(name);
-//        ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-//        for (Object serObj : list) {
-//            try {
-//                objectOut.writeObject(serObj);
-//                System.out.println("The Object  was succesfully written to a file");
-//
-//            } catch (Exception ex) {
-//                ex.printStackTrace();
-//            }
-//
-//        }
-//        objectOut.close();
-//    }
-
-//    public List<Object> readObjectToFile(String name) throws IOException {
-//        FileInputStream fileOut = new FileInputStream(name);
-//        ObjectInputStream objectIn = new ObjectInputStream(fileOut);
-//        List<Object> objects = new ArrayList<>();
-//
-//        while (true) {
-//            try {
-//                Object obj = objectIn.readObject(); // Deserialize the object
-//                objects.add(obj);
-//            } catch (EOFException e) {
-//                break; // End of file reached
-//            } catch (ClassNotFoundException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
-//        return objects;
-//    }

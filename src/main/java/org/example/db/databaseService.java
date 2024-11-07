@@ -1,17 +1,19 @@
 package org.example.db;
 
+import org.example.enums.TableStatus;
 import org.example.person.employee.Chef;
 import org.example.person.employee.Manager;
 import org.example.person.employee.Receptionist;
 import org.example.person.employee.Waiter;
 import org.example.restaurant.menu.objects.Meal;
 import org.example.restaurant.menu.objects.MenuSection;
+import org.example.restaurant.order.objects.Table;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public class databaseService {
-    static {
+    public static void load() {
         MenuSection menuSection = new MenuSection("Birinchi ovqat", "",
                 List.of(new Meal("Palov", 25000d), new Meal("Lag'mon", 20000d)));
         MenuSection menuSection2 = new MenuSection("Shirinlik", "",
@@ -30,13 +32,8 @@ public class databaseService {
         database.USERS.add(chef);
         database.USERS.add(waiter);
         database.USERS.add(manager);
-        System.out.println("static");
-    }
-    {
-        System.out.println("Insteance block");
-    }
+        System.out.println("All dates loaded!");
 
-    public databaseService() {
-        System.out.println("construktor");
+        database.TABLES.add(new Table(TableStatus.FREE, 12, 120));
     }
 }

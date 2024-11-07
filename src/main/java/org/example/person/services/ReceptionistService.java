@@ -14,16 +14,23 @@ public class ReceptionistService implements ReceptionistServiceImp {
             for (Reservation reservation : database.RESERVATIONS) {
                 System.out.println(reservation);
             }
-            System.out.print("choose reservation you make table: ");
+            if (database.RESERVATIONS.isEmpty()) {
+                System.out.println("There is not any reservation");
+            } else{
+                System.out.print("choose reservation you make table: ");
+                return false;
+            }
+
+
             int resId = Input.scannerInt.nextInt();
+
             for (Reservation reservation : database.RESERVATIONS) {
                 if (reservation.getId() == resId) chosenReservation = reservation;
             }
 
             if (chosenReservation == null) {
                 System.out.println("Please enter true reservation");
-            }
-            else break;
+            } else break;
         }
 
         System.out.println("table choose");
@@ -37,7 +44,7 @@ public class ReceptionistService implements ReceptionistServiceImp {
                 }
             }
 
-            if(!isfull){
+            if (!isfull) {
                 table.getReservations().add(chosenReservation);
                 chosenReservation.setStatus(ReservationStatus.CONFIRMED);
                 System.out.println("done!!");
